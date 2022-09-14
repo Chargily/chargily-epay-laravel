@@ -147,12 +147,12 @@ Here is an example of the data that comes with the post request from Chargily eP
 #### Testing your Webhook
 I added an internal feature to simulate a payment of an invoice to test your webhook without the need to use Postman, after installing this package, you will automatically have a new route `/epay-webhook-tester`, navigate to it, put the ID of the invoice you want to simulate its payment and click on PAY.
 
-**Important: ** When you run your application using the local server `php artisan serve`, it will work on a single thread, so making post requests to itself will give you a timeout error, on a server, this is not a problem because it will use Apache or Nginx, the solution is to start another local server on another port (ex: 8001) and use this feature from there.
+**Important:** When you run your application using the local server `php artisan serve`, it will work on a single thread, so making post requests to itself will give you a timeout error, on a server, this is not a problem because it will use Apache or Nginx, the solution is to start another local server on another port (ex: 8001) and use this feature from there.
 Example: 
 1. Run `php artisan serve` so you will have your app on `http://127.0.0.1:8000`.
 2. In another terminal instance, run `php artisan serve --port=8001` then visit `http://127.0.0.1:8001/epay-webhook-tester`, not `http://127.0.0.1:8000/epay-webhook-tester`
 
-**Note: **for security purposes, this feature works only on the local environment (`APP_ENV=local`), and am sure it's not needed in production.
+**Note:** for security purposes, this feature works only on the local environment (`APP_ENV=local`), and am sure it's not needed in production.
 
 ![Test Chargily ePay](https://i.imgur.com/k2yaVSt.png)
 
@@ -163,4 +163,4 @@ This Laravel package is built on top of [this PHP package](https://github.com/Ch
 If you discover any security related issues, please email theHocineSaad@gmail.com instead of using the issue tracker.
 
 ## License
-Laravel-Chargily-ePay project is open-sourced software licensed under the [MIT license](https://github.com/theHocineSaad/laravel-chargily-epay/blob/main/LICENSE.md "MIT license").
+Laravel-Chargily-ePay project is open-sourced software licensed under the [MIT license](https://github.com/Chargily/chargily-epay-laravel/blob/main/LICENSE.md "MIT license").
